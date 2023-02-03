@@ -1,0 +1,35 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "budibase-recaptcha",
+    "friendlyName": "budibase-recaptcha",
+    "description": "This component allows you to add a recaptcha to your form.",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "field/number",
+        "key": "field",
+        "label": "Field",
+        "required": "true"
+      },
+      {
+        "type": "text",
+        "key": "label",
+        "label": "Label"
+      },
+      {
+        "type": "text",
+        "key": "dataSitekey",
+        "label": "ReCAPTURA Data Sitekey"
+      },
+      {
+        "type": "validation/string",
+        "key": "validation",
+        "label": "Validation"
+      }
+    ]
+  },
+  "hash": "abea1a812ba2233d4366194548b41ede512b42a2",
+  "version": "1.0.0"
+}
