@@ -17,6 +17,7 @@
   export let label;
   export let dataSitekey;
   export let validation;
+  let recaptchaResult ="";
   
   let fieldApi;
   let fieldState;
@@ -43,9 +44,14 @@
   onDestroy(() => {
     fieldApi?.deregister();
     unsubscribe?.();
-});
+  });
 
-
+  function recaptcha_validation()
+  {
+    //doRecapturaPost(sillek_code.value)
+    //fieldApi?.setValue(recaptchaResult)
+    fieldApi?.setValue(sillek_code.value)
+  }
 
 </script>
 <div class="spectrum-Form-item" use:styleable={$component.styles}>
@@ -60,7 +66,7 @@
     {label || " "}
   </label>
   <div class="g-recaptcha" data-sitekey="{dataSitekey}" data-callback="recaptcha_callback" ></div>
-  <input bind:this={sillek_code} id="sillek_code" on:change={() => fieldApi?.setValue(sillek_code.value)} />
+  <input type="hidden" bind:this={sillek_code} id="sillek_code" on:change={recaptcha_validation}/>
   {#if !field}
     <div class="error">Please select a field</div>
   {/if}
