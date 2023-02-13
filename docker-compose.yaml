@@ -4,15 +4,17 @@ services:
     restart: unless-stopped
     image: budibase/budibase:latest
     ports:
-      - 10003:80
+      - 10005:80
+    extra_hosts:
+      - "host.docker.internal:127.0.0.1"
     environment:
-      JWT_SECRET: G3bKXWVoySsK1tdN8rB1pfQ1EKeb7725
-      MINIO_ACCESS_KEY: IjV7H3G8PiBY65zQvK6DZkKbtxSXRv5G
-      MINIO_SECRET_KEY: jhfPCGzhGH1IrbmQLfBJLZVf76kU4srk
-      REDIS_PASSWORD: dvnxBbPfYHsM4MTECfok83xHHTsg0H7J
-      INTERNAL_API_KEY: UiA1Oh4RT9imXPH4bgnh0b7LZdaVD7GN
+      JWT_SECRET: aZ7nLXtCpmza9LhveXqxdbVQX7li7tD4
+      MINIO_ACCESS_KEY: w7LG4jsVRcKedbs0P5Fi8z946eyaZbzm
+      MINIO_SECRET_KEY: 1HxEpj2Kf6XXiCxKRyFYWDinIWAP2oMA
+      REDIS_PASSWORD: VdZXYkEgqFdfolUR8rvIdk20Tl4CsynX
+      INTERNAL_API_KEY: ZDIv7RTsO0vW0WO2K5FZFuHqIjxPb4s8
       COUCHDB_USER: admin
-      COUCHDB_PASSWORD: Ed8WuzDhxOgsXGLJzWtlRwiyxTE2VPDK
+      COUCHDB_PASSWORD: TJ0UXwtn7Y5DJaXYBNuoMnRJHjTbU2n4
       PLUGINS_DIR: /plugins
       BB_ADMIN_USER_EMAIL: admin@admin.com
       BB_ADMIN_USER_PASSWORD: admin
