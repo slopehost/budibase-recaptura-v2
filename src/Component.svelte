@@ -13,7 +13,7 @@
   import { onDestroy } from "svelte";
 
   export let field;
-  export let sillek_code;
+  let sillek_code = 'not_set';
   export let label;
   export let dataSitekey;
   export let validation;
@@ -32,7 +32,7 @@
   const labelPos = fieldGroupContext?.labelPosition || "above";
 
   $: formStep = formStepContext ? $formStepContext || 1 : 1
-  $: formField = formApi?.registerField(field, "string", "0", false, validation, formStep)
+  $: formField = formApi?.registerField(field, "string", "", false, validation, formStep)
   $: unsubscribe = formField?.subscribe((value) => {
     fieldState = value?.fieldState;
     fieldApi = value?.fieldApi;
